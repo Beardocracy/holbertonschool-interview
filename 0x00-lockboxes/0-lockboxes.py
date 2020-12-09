@@ -19,4 +19,3 @@ def canUnlockAll(boxes):
     if len(checked_keys) == final_box:
         return True
     return False
-
