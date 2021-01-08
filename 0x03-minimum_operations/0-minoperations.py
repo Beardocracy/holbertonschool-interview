@@ -3,6 +3,7 @@
 This module contains minOperations
 """
 
+
 def minOperations(n):
     ''' Returns the sum of prime factors of a number'''
     if n <= 0:
