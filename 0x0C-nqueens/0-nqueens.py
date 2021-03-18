@@ -14,7 +14,7 @@ def print_board(board, n):
     for row in range(n):
         for col in range(n):
             if board[row][col]:
-                print("[{},{}]".format(row, col), end="")
+                print("[{}, {}]".format(row, col), end="")
                 if row < n - 1:
                     print(", ", end="")
     print("]")
