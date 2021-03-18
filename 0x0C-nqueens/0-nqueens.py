@@ -87,19 +87,24 @@ def create_boards(n):
             print_board(board, n)
 
 
-if len(sys.argv) != 2:
-    print("Usage: nqueens N")
-    exit(1)
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: nqueens N")
+        exit(1)
 
-n = sys.argv[1]
-try:
-    n = int(n)
-except ValueError:
-    print("N must be a number")
-    exit(1)
+    n = sys.argv[1]
+    try:
+        n = int(n)
+    except ValueError:
+        print("N must be a number")
+        exit(1)
 
-if n < 4:
-    print("N must be at least 4")
-    exit(1)
+    if n < 4:
+        print("N must be at least 4")
+        exit(1)
 
-create_boards(n)
+    create_boards(n)
+
+
+if __name__ == "__main__":
+    main()
