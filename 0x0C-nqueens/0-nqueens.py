@@ -20,18 +20,6 @@ def print_board(board, n):
     print("]")
 
 
-def pretty_print(board, n):
-    '''
-    Prints a chess board
-    Good for debugging
-    '''
-    for i in range(n):
-        for j in range(n):
-            print(board[i][j], end=" ")
-        print()
-    print()
-
-
 def attack_check(board, row, col, n):
     '''
     Checks if there is a queen on the board this spot can attack.
@@ -73,8 +61,6 @@ def solveNQUtil(board, row, n):
     '''
     Places queens on the board recursively by row
     '''
-    # pretty_print(board, n)
-
     if row >= n:
         return True
 
@@ -93,9 +79,7 @@ def create_boards(n):
     for start in range(1, n - 1):
         board = [[0 for col in range(n)] for row in range(n)]
         board[0][start] = 1
-        # pretty_print(board, n)
         solveNQUtil(board, 1, n)
-        # pretty_print(board, n)
         print_board(board, n)
 
 
