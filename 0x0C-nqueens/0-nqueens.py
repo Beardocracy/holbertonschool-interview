@@ -26,6 +26,9 @@ def attack_check(board, row, col, n):
     Since we are filling the board from 0x0 to NxN, we only need to
     look left, up, and in the upwards diagonals for existing Queens.
     '''
+    if row == n or col == n:
+        return False
+
     for x in range(col):
         if (board[row][x]):
             return False
@@ -57,29 +60,25 @@ def solveNQUtil(board, row, n):
     '''
     Places queens on the board recursively by row
     '''
-    if row >= n:
-        return True
+    if row == n:
+        print_board(board, n)
+        # return True
 
     for col in range(n):
         if attack_check(board, row, col, n):
             board[row][col] = 1
-            if solveNQUtil(board, row + 1, n) is True:
-                return True
+            solveNQUtil(board, row + 1, n)
             board[row][col] = 0
 
-    return False
+    # return False
 
 
 def create_boards(n):
     '''
-    Creates boards and sends them to recursive func
+    Creates board and sends to recursive func
     '''
-    for start in range(n):
-        board = [[0 for col in range(n)] for row in range(n)]
-        board[0][start] = 1
-        solved = solveNQUtil(board, 1, n)
-        if solved:
-            print_board(board, n)
+    board = [[0 for col in range(n)] for row in range(n)]
+    solved = solveNQUtil(board, 0, n)
 
 
 def main():
