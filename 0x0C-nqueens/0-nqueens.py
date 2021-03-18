@@ -100,7 +100,7 @@ def create_boards(n):
 
 
 if len(sys.argv) != 2:
-    print("Usage: nqueens N\n")
+    print("Usage: nqueens N")
     exit(1)
 
 n = sys.argv[1]
