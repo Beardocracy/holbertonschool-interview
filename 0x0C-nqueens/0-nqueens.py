@@ -76,6 +76,9 @@ def solveNQUtil(board, row, n):
 
 
 def create_boards(n):
+    '''
+    Creates boards and sends them to recursive func
+    '''
     for start in range(1, n - 1):
         board = [[0 for col in range(n)] for row in range(n)]
         board[0][start] = 1
