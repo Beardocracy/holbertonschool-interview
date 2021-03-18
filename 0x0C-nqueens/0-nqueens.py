@@ -79,11 +79,12 @@ def create_boards(n):
     '''
     Creates boards and sends them to recursive func
     '''
-    for start in range(1, n - 1):
+    for start in range(n):
         board = [[0 for col in range(n)] for row in range(n)]
         board[0][start] = 1
-        solveNQUtil(board, 1, n)
-        print_board(board, n)
+        solved = solveNQUtil(board, 1, n)
+        if solved:
+            print_board(board, n)
 
 
 if len(sys.argv) != 2:
