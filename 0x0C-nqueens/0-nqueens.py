@@ -26,17 +26,14 @@ def attack_check(board, row, col, n):
     Since we are filling the board from 0x0 to NxN, we only need to
     look left, up, and in the upwards diagonals for existing Queens.
     '''
-    # Look horizontal left
     for x in range(col):
         if (board[row][x]):
             return False
 
-    # Look up
     for y in range(row):
         if (board[y][col]):
             return False
 
-    # Look diagonal to upper left
     i = row - 1
     j = col - 1
     while i >= 0 and j >= 0:
@@ -45,7 +42,6 @@ def attack_check(board, row, col, n):
         i -= 1
         j -= 1
 
-    # Look diagonal to upper right
     i = row - 1
     j = col + 1
     while i >= 0 and j < n:
@@ -67,7 +63,6 @@ def solveNQUtil(board, row, n):
     for col in range(n):
         if attack_check(board, row, col, n):
             board[row][col] = 1
-            # recur to place rest of the queens
             if solveNQUtil(board, row + 1, n) is True:
                 return True
             board[row][col] = 0
