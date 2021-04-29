@@ -45,19 +45,19 @@ void array_printer(int *array, size_t start, size_t end)
  */
 int ab_recurse(int *array, int index, int stop, int value)
 {
-	int mid = ((stop - index) / 2) + index;
+	int mid = (stop + index) / 2;
+
+	if (index > stop)
+		return (-1);
 
 	array_printer(array, index, stop);
-	if (array[mid] == value)
-	{
-		if (array[mid - 1] != value)
-			return (mid);
-	}
-	if (stop == index)
-		return (-1);
+
 	if (array[mid] < value)
 		return (ab_recurse(array, mid + 1, stop, value));
 	if (array[mid] > value)
 		return (ab_recurse(array, index, mid, value));
-	return (-1);
+	if (array[mid - 1] == value)
+		return (ab_recurse(array, index, mid, value));
+
+	return (mid);
 }
