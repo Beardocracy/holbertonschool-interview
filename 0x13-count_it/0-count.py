@@ -16,14 +16,14 @@ def count_words(subreddit, word_list, after='', all_hot_words=[]):
             dict = {}
             for keyword in word_list:
                 for hot_word in all_hot_words:
-                    if hot_word == keyword:
+                    if hot_word == keyword.lower():
                         if keyword not in dict:
                             dict[keyword] = 1
                         else:
                             dict[keyword] += 1
             for keyword in sorted(dict, key=dict.get, reverse=True):
                 if dict[keyword]:
-                    print('{}: {}'.format(keyword, dict[keyword]))
+                    print('{}: {}'.format(keyword.lower(), dict[keyword]))
             return
 
         data = response.json().get('data')
