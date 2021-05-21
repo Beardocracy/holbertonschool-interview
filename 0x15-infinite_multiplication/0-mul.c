@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 			curr_prod--;
 		}
 		first = 0;
-		*curr_prod = (char)(carry + '0');
+		*curr_prod = carry + '0';
 	}
 	str_print(curr_prod);
 	free(product);
