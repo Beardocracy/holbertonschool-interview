@@ -83,6 +83,8 @@ void str_print(char *s)
 {
 	while (*s == '0')
 		s++;
+	if (!*s)
+		_putchar('0');
 	while (*s)
 		_putchar(*s++);
 	_putchar('\n');
