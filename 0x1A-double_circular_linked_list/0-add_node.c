@@ -21,10 +21,12 @@ List *add_node_end(List **list, char *str)
 	if (head == NULL)
 	{
 		*list = new;
+		new->next = new;
+		new->prev = new;
 		return (new);
 	}
 
-	if (head->prev == NULL)
+	if (head->prev == head)
 	{
 		head->next = new;
 		head->prev = new;
@@ -60,10 +62,12 @@ List *add_node_begin(List **list, char *str)
 	if (head == NULL)
 	{
 		*list = new;
+		new->next = new;
+		new->prev = new;
 		return (new);
 	}
 
-	if (head->prev == NULL)
+	if (head->prev == head)
 	{
 		head->next = new;
 		head->prev = new;
