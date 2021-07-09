@@ -34,9 +34,13 @@ void radix_sort(int *array, size_t size)
  */
 void count_sort(int *array, size_t size, int exp)
 {
-	int output[size];
+	int *output;
 	int count[10], digit, magic;
 	int i;
+
+	output = malloc(sizeof(int) * size);
+	if (output == NULL)
+		return;
 
 	for (i = 0; i < 10; i++)
 		count[i] = 0;
