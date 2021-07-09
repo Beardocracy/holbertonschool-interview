@@ -38,7 +38,7 @@ void count_sort(int *array, size_t size, int exp)
 	int count[10], digit, magic;
 	int i;
 
-	output = malloc(sizeof(int) * size);
+	output = (int *)malloc(sizeof(int) * size);
 	if (output == NULL)
 		return;
 
@@ -66,7 +66,7 @@ void count_sort(int *array, size_t size, int exp)
 
 	for (i = 0; i < (int)size; i++)
 		array[i] = output[i];
-
+	free(output);
 	print_array(array, size);
 }
 
