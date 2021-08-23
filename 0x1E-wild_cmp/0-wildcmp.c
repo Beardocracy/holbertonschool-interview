@@ -37,5 +37,6 @@ int wild_rec(char *s1, char *s2, char *s2_temp)
 int wildcmp(char *s1, char *s2)
 {
 	char *s2_temp = NULL;
+
 	return (wild_rec(s1, s2, s2_temp));
 }
