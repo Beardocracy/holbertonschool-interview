@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 ''' Module contains isWinner '''
 
+
 def isWinner(x, nums):
     ''' Determines winner of the game '''
     if x == 0 or x == -1:
