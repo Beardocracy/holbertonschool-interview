@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+''' Module contains isWinner '''
 
 def isWinner(x, nums):
     ''' Determines winner of the game '''
